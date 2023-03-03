@@ -34,6 +34,6 @@ pthread_cancel()
 pthread_testcancel();
 pthread_setcancelstate()    ->  set cancel info
 pthread_setcanceltype()     -> set cancel type
-
+pthread_detech();
 
 (6)synchronization(tong bu)
