@@ -49,12 +49,13 @@ int main()
     int err;
     int pos;
     struct thr_arg *p;
-    void * ptr;
+    void *ptr;
     for (int i = LEFT; i <= RIGHT; i++)
     {
         p = malloc(sizeof(*p));
-        if (p==0){
-                exit(1);
+        if (p == 0)
+        {
+            exit(1);
         }
         p->arg = i;
         pthread_t tid;
