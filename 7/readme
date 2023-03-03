@@ -1,0 +1,97 @@
+1 shell.c
+come true shell 
+---------------
+
+
+2 authority info 
+
+u+s
+g+s
+getuid();
+geteuid();
+getgid();
+getegid();
+setuid();
+setgid();
+setreuid();   the atomic operation(yuan zi chao zuo)
+setregid();	ditto(tong shang)
+seteuid();
+setegid();
+
+
+--------------
+example: sudo.c  Usege ./sudo 0(uid) cat /etc/shadow 
+
+exec on command, that need chown root sudo\chmod u+s sudo
+
+
+3 script file and interpreter language(jie shi qi)
+
+#! /bin/bash
+ls
+whoami
+
+
+---------------------
+4 system function info
+
+system(char * command);  -> fork + exec +wait (few)
+
+5 process accounting(jin cheng kuai ji)
+
+acct();
+
+6 process time info 
+
+times();
+
+7 guard(protection) process (shou hu jin cheng)
+
+hui hua (session) -> info sid()
+
+setsid();  -> ppid==1 and pid=pgid=sid and tty == ?
+getpgrp();
+getpgid();
+setpgrp();
+setpgid();
+--------------------
+the daemon.c have a problem /*!!!!!!!!!!*/
+
+the question have been solved, that cause of use "chdir()".
+
+example: chdir("/") and chdir("/") is work dir.
+---------------------
+zhong duan(terminal)
+
+8 system log
+
+syslogd
+openlog();
+closelog();
+syslog();
+
+------------
+the file log (daemon.c) in  record(ji lu) "/var/log/daemon.log"
+
+
+9 bing fa (concurrency)
+
+(1)signal
+
+kill();
+raise();
+alarm();
+pause();
+abort();
+system();
+------------
+sleep();
+---------------
+sigsuspend();  -> kuozhan  mode
+sigaction();
+setitimer();
+-----------------
+
+
+(2)thread
+

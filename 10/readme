@@ -1,0 +1,35 @@
+1 real-time signal
+
+real_time_susp.c -> define my real-time-signal
+kill -40 process num
+
+2 threads info 
+
+(1)the threads info 
+---------------
+posix   :
+pthread_equal()
+pthread_self()
+----------------
+openmp  :
+
+(2)the threads create 
+pthread_create()
+
+(3)the threads stop
+
+ 1 threads from start treturn
+ 2 the thread was cancelled by another thread
+ 3 thread_exit()
+ 4 pthread_join(pthread_t,void**)   -> wait();
+
+(4)the threads(stack(dui zhan)) clear
+
+1 pthread_cleanump_push();
+2 pthread_cleanump_pop();
+
+(5) thread cancelled
+
+
+
+(6)synchronization(tong bu)

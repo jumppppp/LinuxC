@@ -1,0 +1,6 @@
+#! /bin/bash
+cc -c mytbf.c -o mytbf.o
+cc -c main.c -o main.o
+cc main.o mytbf.o -o main
+rm main.o mytbf.o
+

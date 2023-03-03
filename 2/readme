@@ -1,0 +1,37 @@
+1 wen jian io
+2 wen jian io / system io
+
+
+----------------------------
+wen jian i/o
+-----
+
+fopen   ulimit -a chuange open dir num, default 1024, but to most is 1021, becausestdin,stdout and stderr is included in the standard stream.
+
+fgetc
+fputc
+fgets
+fputs
+fread
+fwrite
+
+errno
+perror
+strerror
+
+
+fseek   /fseeko   64 bit
+frewind
+ftell	/ftello  64 bit
+
+fflush
+
+tmpnam
+tmpfile
+
+fclose
+------------------------
+system i/o
+------
+
+

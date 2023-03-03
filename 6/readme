@@ -1,0 +1,73 @@
+1 huan jing bian liang
+
+
+putenv();
+setenv();
+unsetenv();
+getenv();
+
+
+extern char ** environ
+
+pmap : cha kan c jin cheng bu ju
+ps -axf : cha kan cheng x jin cheng 
+
+
+2 function jump info::
+
+setjmp();
+goto();
+longjmp();
+
+3 shou guan zhuang zai ku 
+
+dlopen();
+dlclose();
+dlerror();
+dlsym();
+
+4 the system resources,acquire and control of that
+
+ulimit -a
+
+------------
+getrlimit();
+
+setrlimit();
+
+5 process info 
+
+fork();
+
+begin fork() before, that need fflush(); !!!
+
+vfork();
+
+6 wait chlid process die
+
+wait();
+waitpid();
+waitid();
+wait3();
+wait4();
+
+
+------------------------
+
+p1.c  -> normal calculation
+p2.c  -> the fork calc
+p3.c  -> the wait fork clac
+
+
+7 exec info 
+
+execl
+execlp
+execle
+execv
+execvp
+---------------
+exec1.c -> example execl run p2
+exec2.c -> run p2 
+exec3.c -> change run name of standard run sleep
+

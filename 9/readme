@@ -1,0 +1,41 @@
+setitimer();
+sleep()->neosleep()->usleep()
+select();
+abort()
+system()
+------------------
+1 signal set
+#include<signal.h>
+signal type -> sigset_t
+
+sigemptyset();
+sigfillset();
+sigaddset()
+sigdelset()
+sigismember()
+
+2 signal mask word/pending set
+
+sigprocmask();
+sigpanding();
+sigaction();
+
+sigprocmask1.c  ->  realization atomic operation
+deamon_sig.c    ->  realization after closeing the  process,that after receiving the signal close file stream 
+-------------------------
+sigaction -> signal
+setitimer -> alarm
+sigsuspend -> pause
+--
+sigsuspend(&oset);  -> the atomic operation 
+equal to the follow
+
+// signal_t tempset;
+// sigprocmask(SIG_SETMASK, &oset, &tempset);
+// pause();
+// sigprocmask(SIG_SETMASK,&tempset,NULL)
+
+-----------------------
+the sigaction()
+three args info 
+getcontext();

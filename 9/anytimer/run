@@ -1,0 +1,5 @@
+#! /bin/bash
+cc -c main.c -o main.o
+cc -c anytimer.c -o anytimer.o
+cc main.o anytimer.o  -o main
+rm main.o anytimer.o

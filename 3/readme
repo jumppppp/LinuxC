@@ -1,0 +1,25 @@
+system i/o
+
+---------------
+
+fileno standard i/o -> system i/o
+fdopen system i/o -> standard i/o
+
+swap i/o
+
+# most time not swap i/o
+--------------
+
+the standard i/o have buffer , that is full buffer,line buffer,null buffer
+
+--------------
+strace ./xxx debug
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+1 signal
+
+
+signal.c  ->  shi xian xin hao demo
+signal2.c ->  shi xian xin hao ding xiang dao hanshu 
+
+
+signal info 
+
+--------------------------------------
+
+root cause:: kernel state -> users state (nei he tai zhuan wei yong hu tai shi)
+
+every one process have "mask" and "panding",the "mask" is 32 bit,that is all "1" ,the "panding" is bigmap,that memory interrupt(zhong duan) signal.when kernel state switching to users state,triggering "mask" & "panding",that  interrupt signal triggered.
+
+
+---------------------------------------
+
+mask	panding	state
+1	0	begin(user state)
+		standard interrrupt(user state -> kernel state)
+1	1	receive signal (kernel state -> user state)
+0	0	corresponding signal time (user state)
+1	0	corresponded end
+
+
+----------------------------------------
+
+function info::
+
+kill();
+raise();	->  signal of send self 
+alarm(int);	->  last line(shi xian zui hou yi ju yu ju)
+			gcc xxx.c -O1 (optimization(you hua) )
+pause(void);	->  wait signal of interrupt(da duan)
+
+--------------------------------------
+5time.c 	-> use time.h
+5alarm.c 	-> use signal
+5alarm_O3	-> use "gcc 5alarm.c -O3"
+<could use "gcc -S" output assembly language>
+-------------------------------------
+mycat.c 	-> use signal(pause,alarm,signal),realization every one seconds output ten char.
+mycat2.c	-> token bucket,that ditto.
+

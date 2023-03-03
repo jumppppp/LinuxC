@@ -1,0 +1,40 @@
+link    
+ln -l -s
+
+unlink
+
+ufs system
+
+-----------------------
+
+create anonymous file (unlink)
+
+remove - remove a file or dir
+
+rename - change the or location of a file
+
+--------------------------
+
+change dir time
+
+utime - change dir last read/write time
+
+---------------------------
+mkdir
+
+redir
+
+----------------------------
+chdir -  change workding  directoty
+fchdir
+getcwd
+
+----------------------------
+glob();
+ 
+
+#opendir closedir readdir rewinddir fseekdir telldir
+
+
+
+

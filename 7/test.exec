@@ -1,0 +1,6 @@
+#! /home/test/linuxc/7/shell
+
+ls
+whoami
+ps
+

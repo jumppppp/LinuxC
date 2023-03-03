@@ -1,0 +1,45 @@
+1 /etc/passwd
+
+getpwuid
+getpwnam
+
+2 /etc/group
+
+getgrgid(gid_t gid)
+getgrnam(char *name)
+
+3 /etc/shadow
+
+getspname
+crypt()
+
+4 time info 
+
+time();
+gmtime();
+localtime();
+mktime();
+strftime();
+
+5 program exit info
+
+normal  exit::
+
+	return
+	exit
+	_Exit or _exit
+	last thread from startup routine return
+	last thread use pthread_exit
+
+anomaly exit::
+	abort
+	
+
+gouzi
+	atexit();
+	on_exit();
+	
+	
+
+
+
