@@ -35,5 +35,11 @@ pthread_testcancel();
 pthread_setcancelstate()    ->  set cancel info
 pthread_setcanceltype()     -> set cancel type
 pthread_detech();
-
+------------------------
+posix.c ->  
+pthread_create():Resource temporarily unavailable
+count={{30032750}}
+need adjust <ulimit -a>
+-32x    -> ulimit -s 819200
+-64x    -> change pid info 
 (6)synchronization(tong bu)
