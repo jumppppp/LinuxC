@@ -44,3 +44,5 @@ need adjust <ulimit -a>
 -64x    -> change pid info 
 
 (6)synchronization(tong bu)
+
+hu chi liang(mutex)
