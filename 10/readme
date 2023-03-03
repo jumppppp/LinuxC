@@ -42,4 +42,5 @@ count={{30032750}}
 need adjust <ulimit -a>
 -32x    -> ulimit -s 819200
 -64x    -> change pid info 
+
 (6)synchronization(tong bu)
