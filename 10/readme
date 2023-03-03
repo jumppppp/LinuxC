@@ -30,6 +30,10 @@ pthread_create()
 
 (5) thread cancelled
 
+pthread_cancel()
+pthread_testcancel();
+pthread_setcancelstate()    ->  set cancel info
+pthread_setcanceltype()     -> set cancel type
 
 
 (6)synchronization(tong bu)
