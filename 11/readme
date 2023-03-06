@@ -1,0 +1,7 @@
+1 threads synchronization(tong bu)
+    by mutex 
+    pthread_mutex_lock
+    pthread_mutex_unlock
+posix_mutex.c   ->  use mutex by (query method)cha xun fa
+mytbuf_mt   -> use mutex an thread, del signal
+

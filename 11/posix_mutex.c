@@ -4,9 +4,9 @@
 #include <unistd.h>
 #include <string.h>
 #define LEFT 30000000
-#define RIGHT 30500000
+#define RIGHT 30005000
 #define MAX_P 100
-#define MAX_L 5120000
+#define MAX_L 51200
 static int num = 0;
 static pthread_mutex_t mut = PTHREAD_MUTEX_INITIALIZER;
 static pthread_t plist[MAX_L];
@@ -73,7 +73,9 @@ int main()
             printf("count={{%d}}\n", i);
             exit(1);
         }
+        pthread_mutex_lock(&mut);
         pos = find_pos();
+        
         // printf("<%d>", pos);
         if (pos == -1)
         {
@@ -81,6 +83,7 @@ int main()
             exit(1);
         }
         plist[pos] = tid;
+        pthread_mutex_unlock(&mut);
         // printf("[%d]",plist[pos]);
     }
     for (int i = LEFT; i < RIGHT; i++)
