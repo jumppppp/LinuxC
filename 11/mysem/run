@@ -1,0 +1,6 @@
+#! /bin/bash
+cc -c mysem.c -o mysem.o
+cc -c main.c -o main.o
+cc main.o mysem.o -o main
+rm main.o mysem.o
+

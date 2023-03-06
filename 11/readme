@@ -22,3 +22,6 @@
 
     mytbf_mutex_thread  -> add notice method
     abcd_wait.c     ->  use pthread_cond_wait();
+
+(3) signal (xin hao liang) (type int,that like tbf)
+
