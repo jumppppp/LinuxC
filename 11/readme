@@ -5,10 +5,10 @@
 
 (1)query method::
     posix_mutex.c   ->  use mutex by (query method)cha xun fa
-    mytbuf_mutex_thread   -> use mutex an thread, del signal
+    mytbf_mutex_thread   -> use mutex an thread, del signal
 
     pthread_once();
-    
+
 (2)notice method::
     tiao jian lei xing(condition type):
         pthread_cond_t
@@ -16,3 +16,9 @@
         pthread_cond_destory();
         pthread_cond_broadcast();
         pthread_cond_signal();
+        pthread_cond_timewait();
+        pthread_cond_wait();    -> wait notice + grab a lock
+
+
+    mytbf_mutex_thread  -> add notice method
+    abcd_wait.c     ->  use pthread_cond_wait();
