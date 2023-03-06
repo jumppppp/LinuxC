@@ -5,3 +5,4 @@
 posix_mutex.c   ->  use mutex by (query method)cha xun fa
 mytbuf_mt   -> use mutex an thread, del signal
 
+pthread_once();

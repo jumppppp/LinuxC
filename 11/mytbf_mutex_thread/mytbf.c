@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "mytbf.h"
 #include <unistd.h>
 #include <signal.h>
@@ -10,6 +11,8 @@
 static struct mytbf_st *job[MYTBF_MAX];
 static pthread_mutex_t mut_job = PTHREAD_MUTEX_INITIALIZER;
 static int inited = 0;
+static pthread_t tid_alarm;
+static pthread_once_t init_once = PTHREAD_ONCE_INIT;
 // static sighandler_t alarm_save;
 // struct sigaction al_save;
 struct mytbf_st
@@ -57,19 +60,20 @@ static void module_unload(void)
 	// {
 	// 	fprintf(stderr, "sigemptyset()");
 	// }
+	pthread_cancel(tid_alarm);
+	pthread_join(tid_alarm, NULL);
 	for (int i = 0; i < MYTBF_MAX; i++)
 	{
-		if (job[i]!=NULL){
+		if (job[i] != NULL)
+		{
 			pthread_mutex_destroy(&job[i]->mut);
 			free(job[i]);
 		}
-
 	}
-
 	pthread_mutex_destroy(&mut_job);
 }
 
-static void thr_alarm(void *)
+static void *thr_alarm(void *p)
 {
 	// alarm(1);
 	// if (infop->si_code != SI_KERNEL)
@@ -81,7 +85,7 @@ static void thr_alarm(void *)
 		{
 			pthread_mutex_lock(&mut_job);
 			if (job[i] != NULL)
-			{	
+			{
 				pthread_mutex_lock(&job[i]->mut);
 				job[i]->token += job[i]->cps;
 				if (job[i]->token > job[i]->burst)
@@ -98,7 +102,6 @@ static void thr_alarm(void *)
 static void module_load(void)
 {
 
-	pthread_t tid_alarm;
 	int err;
 	err = pthread_create(&tid_alarm, NULL, thr_alarm, NULL);
 	if (err)
@@ -133,11 +136,12 @@ static void module_load(void)
 
 mytbf_t *mytbf_init(int cps, int burst)
 {
-	if (!inited)
-	{
-		module_load();
-		inited = 1;
-	}
+	// if (!inited)
+	// {
+	// 	module_load();
+	// 	inited = 1;
+	// }
+	pthread_once(&init_once, module_load);
 	int pos;
 	struct mytbf_st *me;
 	me = malloc(sizeof(*me));
@@ -153,9 +157,11 @@ mytbf_t *mytbf_init(int cps, int burst)
 	pthread_mutex_lock(&mut_job);
 	pos = get_free_pos_unlocked();
 	if (pos < 0)
+	{
 		free(me);
-	pthread_mutex_unlock(&mut_job);
-	return NULL;
+		pthread_mutex_unlock(&mut_job);
+		return NULL;
+	}
 	job[pos] = me;
 	pthread_mutex_unlock(&mut_job);
 	return me;
