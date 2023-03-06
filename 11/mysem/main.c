@@ -13,7 +13,7 @@ static pthread_t plist[MAX_P];
 static pthread_mutex_t mut_pos = PTHREAD_MUTEX_INITIALIZER;
 static void *thr_prime(void *p)
 {
-            pthread_mutex_lock(&mut_pos);
+    pthread_mutex_lock(&mut_pos);
     int mark = 1;
     int i = *(int *)p;
     for (int j = 2; j < i / 2; j++)
@@ -29,8 +29,8 @@ static void *thr_prime(void *p)
         printf("%d\n", i);
     }
     int val = mysem_add(sem, 1);
-    printf("val=<%d>\n",val);
-            pthread_mutex_unlock(&mut_pos);
+    printf("val=<%d>\n", val);
+    pthread_mutex_unlock(&mut_pos);
     pthread_exit(p);
 }
 static int find_pos(void)
@@ -55,7 +55,7 @@ int main()
     for (int i = LEFT; i <= RIGHT; i++)
     {
         int val = mysem_sub(sem, 1);
-        printf("val=[%d]\n",val);
+        printf("val=[%d]\n", val);
         pthread_t tid;
         err = pthread_create(&tid, NULL, thr_prime, (void *)&i);
         if (err)
