@@ -31,7 +31,7 @@ int mysem_add(mysem_t *ptr, int val)
     me->val += val;
     pthread_cond_broadcast(&me->cond);
     pthread_mutex_unlock(&me->mut);
-    return me->val;
+    return val;
 }
 
 int mysem_sub(mysem_t *ptr, int val)
@@ -45,7 +45,7 @@ int mysem_sub(mysem_t *ptr, int val)
     me->val -= val;
 
     pthread_mutex_unlock(&me->mut);
-    return me->val;
+    return val;
 }
 
 int mysem_destory(mysem_t *ptr)
