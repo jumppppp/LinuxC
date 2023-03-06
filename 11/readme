@@ -2,7 +2,17 @@
     by mutex 
     pthread_mutex_lock
     pthread_mutex_unlock
-posix_mutex.c   ->  use mutex by (query method)cha xun fa
-mytbuf_mt   -> use mutex an thread, del signal
 
-pthread_once();
+(1)query method::
+    posix_mutex.c   ->  use mutex by (query method)cha xun fa
+    mytbuf_mutex_thread   -> use mutex an thread, del signal
+
+    pthread_once();
+    
+(2)notice method::
+    tiao jian lei xing(condition type):
+        pthread_cond_t
+        pthread_cond_init();
+        pthread_cond_destory();
+        pthread_cond_broadcast();
+        pthread_cond_signal();
