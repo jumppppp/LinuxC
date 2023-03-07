@@ -23,27 +23,20 @@ mysem_t *mysem_init(int initval)
     return me;
 }
 
-int mysem_add(mysem_t *ptr, int val)
-{
+int mysem_add(mysem_t *ptr, int val){
     struct mysem_st *me = ptr;
     pthread_mutex_lock(&me->mut);
-
     me->val += val;
     pthread_cond_broadcast(&me->cond);
     pthread_mutex_unlock(&me->mut);
     return val;
 }
-
-int mysem_sub(mysem_t *ptr, int val)
-{
+int mysem_sub(mysem_t *ptr, int val){
     struct mysem_st *me = ptr;
     pthread_mutex_lock(&me->mut);
-    while (me->val < val)
-    {
-        pthread_cond_wait(&me->cond, &me->mut);
-    }
+    while (me->val < val){
+        pthread_cond_wait(&me->cond, &me->mut);}
     me->val -= val;
-
     pthread_mutex_unlock(&me->mut);
     return val;
 }

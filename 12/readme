@@ -1,0 +1,34 @@
+1\the file read\write lock
+    read lock -> share lock 
+    write lock -> mutex lock
+
+2\thread attribute
+    pthread_attr_init();
+    pthread_attr_destroy();
+    man pthread_attr_init in see also
+
+3\thread attribute synchronization
+    mutex attribute
+        pthread_mutexattr_init();
+        clone();
+        pthread_mutexattr_getttype();
+        pthread_mutexattr_setttype();
+    conditional varibale attribute
+        pthread_condattr_init();
+    read\write lock attribute
+
+4\reentry(chong ru)
+    threads for I/O
+    
+
+
+thr_att.c   ->  test program max thread num
+                ->  change program stack size
+
+
+
+
+
+https://www.bilibili.com/video/BV1yJ411S7r6?p=96&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
+https://www.bilibili.com/video/BV1yJ411S7r6?p=97&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
+https://www.bilibili.com/video/BV1yJ411S7r6?p=98&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
