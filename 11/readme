@@ -25,3 +25,11 @@
 
 (3) signal (xin hao liang) (type int,that like tbf)
     mysem   ->   the question is data no synchronization
+    2023-03-07 solve the question:
+    that cause is main.c contain conditional compertition(tiao jian jing zheng) and function pthread_join() unused.
+    threads question:
+    1\conditional compertition 
+    2\unused mutex
+    3\main thread is not waiting child thread !!!
+
+
