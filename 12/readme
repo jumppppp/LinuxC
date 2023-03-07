@@ -29,7 +29,10 @@
     
 5\openmp thread standard    ->  www.openmp.org
 
+6\advanced I\O
 
+    non-blocking(fei zu se)
+    1 you xian zhuang tai ji bian cheng 
 
 
 
@@ -41,6 +44,12 @@ openmp.c    -> test openmp standard threads
 
 
 
+(thread)
 https://www.bilibili.com/video/BV1yJ411S7r6?p=96&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
 https://www.bilibili.com/video/BV1yJ411S7r6?p=97&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
 https://www.bilibili.com/video/BV1yJ411S7r6?p=98&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
+(avdanced I\O)
+https://www.bilibili.com/video/BV1yJ411S7r6?p=100&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
+https://www.bilibili.com/video/BV1yJ411S7r6?p=101&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
+
+
