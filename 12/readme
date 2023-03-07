@@ -26,14 +26,18 @@
         pthread_kill();
     
     thread and fork
-        
+    
+5\openmp thread standard    ->  www.openmp.org
+
+
 
 
 
 thr_att.c   ->  test program max thread num
                 ->  change program stack size
 
-
+openmp.c    -> test openmp standard threads 
+                    ->  [gcc openmp.c -o openmp -fopenmp]
 
 
 
