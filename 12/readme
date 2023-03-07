@@ -42,6 +42,7 @@ thr_att.c   ->  test program max thread num
 openmp.c    -> test openmp standard threads 
                     ->  [gcc openmp.c -o openmp -fopenmp]
 
+relay.c     -> test Constrained state machine programming(you xian zhuang tai ji bian cheng)
 
 
 (thread)
