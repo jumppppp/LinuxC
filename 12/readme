@@ -20,6 +20,14 @@
 4\reentry(chong ru)
     threads for I/O
     
+    thread and signal
+        pthread_sigmask();
+        pthread_sigwait();
+        pthread_kill();
+    
+    thread and fork
+        
+
 
 
 thr_att.c   ->  test program max thread num
