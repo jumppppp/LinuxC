@@ -14,7 +14,8 @@
         "stdlib.h": "c",
         "pthread.h": "c",
         "mysem.h": "c",
-        "relayer.h": "c"
+        "relayer.h": "c",
+        "errno.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

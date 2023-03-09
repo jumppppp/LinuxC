@@ -1,11 +1,18 @@
 ulimit -a
 change file descriptor(miao shu fu)
 
+relayer/    ->  test relayer(Don't quite understand)
+select.c    ->  test select -> relay.c
 
 
-
-
+advanced I\O   
+    select();
+    poll();
+    epoll();
 
 
 
 https://www.bilibili.com/video/BV1yJ411S7r6/?p=103&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
+https://www.bilibili.com/video/BV1yJ411S7r6?p=104&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
+https://www.bilibili.com/video/BV1yJ411S7r6?p=105&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
+https://www.bilibili.com/video/BV1yJ411S7r6?p=106&spm_id_from=pageDriver&vd_source=3b57f8a5b9524fa45f000f4967a55c8a
