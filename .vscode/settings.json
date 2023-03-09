@@ -15,7 +15,10 @@
         "pthread.h": "c",
         "mysem.h": "c",
         "relayer.h": "c",
-        "errno.h": "c"
+        "errno.h": "c",
+        "stat.h": "c",
+        "mman.h": "c",
+        "wait.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }

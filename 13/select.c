@@ -140,7 +140,7 @@ static void relay(int fd1, int fd2)
                 if (errno == EINTR)
                 {
                     goto select_v1;
-                }
+                } 
                 perror("select()");
                 exit(1);
             }
