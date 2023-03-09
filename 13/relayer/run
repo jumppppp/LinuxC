@@ -1,0 +1,5 @@
+#! /bin/bash
+cc -c main.c -o main.o
+cc -c relayer.c -o relayer.o
+cc relayer.o main.o -o main
+rm main.o relayer.o

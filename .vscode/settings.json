@@ -4,6 +4,7 @@
     
     },
     "files.associations": {
+        "readme": "plaintext",
         "string.h": "c",
         "unistd.h": "c",
         "types.h": "c",
@@ -12,7 +13,8 @@
         "time.h": "c",
         "stdlib.h": "c",
         "pthread.h": "c",
-        "mysem.h": "c"
+        "mysem.h": "c",
+        "relayer.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
