@@ -134,8 +134,7 @@ static void relay(int fd1, int fd2)
         if (fsm12.state < STATE_AUTO || fsm21.state < STATE_AUTO)
         {
         select_v1:
-            int s_stat = select(max(fd1, fd2), &rset, &wset, NULL,
-                                NULL);
+            int s_stat = select(max(fd1, fd2), &rset, &wset, NULL, NULL);
             if (s_stat < 0)
             {
                 if (errno == EINTR)
