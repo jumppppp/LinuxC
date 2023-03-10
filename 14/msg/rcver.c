@@ -20,7 +20,7 @@ int main()
         msgrcv(msg_id, &rbuf, sizeof(rbuf), 0, 0);
         printf("name=%s\n", rbuf.name);
     }
-
+    
     msgctl(msg_id,IPC_RMID,NULL);
     exit(0);
 }
