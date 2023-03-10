@@ -1,0 +1,34 @@
+pipe1.c     ->      test pipe
+player.c    ->      test execl mp3 
+
+
+1 pipe info
+
+2 process communication(jin cheng tong xin )
+    (1) XSI     ->      SysV
+        IPC     ->      Inter-process communication
+        ftok();
+        xxx -> msg sem shm
+        xxxget xxxop xxxctl
+        man msgget....
+
+        msg     msssage queue
+        
+
+    (2) Socket
+
+
+    (3) pipe
+        kerkel supply , dan gong ,zi tong bu ji zhi  
+        anonymous pipe
+            pipe();
+        name pipe
+            mkfifo();
+
+
+
+
+ 113-115 mypipe
+ 116    process communication
+ 117
+ 118
