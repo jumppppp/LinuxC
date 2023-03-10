@@ -1,5 +1,8 @@
 pipe1.c     ->      test pipe
 player.c    ->      test execl mp3 
+msg/        ->      rcver.c     sever
+                        snder.c     client
+                        test message queue,that have cahce area ,the change cache need change POSIX in ulimit -a 
 
 
 1 pipe info
@@ -12,7 +15,7 @@ player.c    ->      test execl mp3
         xxxget xxxop xxxctl
         man msgget....
 
-        msg     msssage queue
+        msg     message queue
         
 
     (2) Socket
