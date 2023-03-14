@@ -1,0 +1,3 @@
+#! /bin/bash
+cc to1.c -o to1
+cc to2.c -o to2
