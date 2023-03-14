@@ -1,11 +1,16 @@
 myftp/      ->      same set computer
-
+shm.c       ->      test shm realization process communication
 question:
     the project to1.c of msgrcv(),that all the time accept Garbled code(luan ma)
     the project to2.c of key1\key2\msg_id1 and msg_id2 unable define while() outside
 
+semop()
+semctl()
 
-
+shared memory
+shmget()
+shmop()
+shmctl()
 
 
 

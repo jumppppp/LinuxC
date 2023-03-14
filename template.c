@@ -1,14 +1,8 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main(){
+int main()
+{
 
-
-
-
-
-
-
-
-exit(0);
+    exit(0);
 }
