@@ -28,11 +28,14 @@ int main()
     {
         msgrcv(msg_id1, &sp, sizeof(sp), 0, 0);
         printf("path=%s\n", sp.path);
+
         FILE *fp = fopen(sp.path, "r");
         if (fp == NULL)
         {
             sd.datalen = 0;
             strcpy(sd.data, "no file!");
+            msgsnd(msg_id2, &sd, sizeof(sd), 0);
+            continue;
         }
         char buf[DATAMAX];
         while (fgets(buf, DATAMAX, fp) != NULL)
@@ -42,9 +45,9 @@ int main()
             msgsnd(msg_id2, &sd, sizeof(sd), 0);
         }
         sd.datalen = 0;
-        strcpy(sd.data, "data end!");
+        strcpy(sd.data, "data end!\n");
         msgsnd(msg_id2, &sd, sizeof(sd), 0);
         fclose(fp);
-        exit(0);
     }
+    exit(0);
 }
