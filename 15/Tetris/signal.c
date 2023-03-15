@@ -51,15 +51,14 @@ static void init_map(void)
 }
 struct xy_t * demos(void)
 {
-    struct xy_t *demo1[8];
-    = (xy_t * )malloc(sizeof(demo1[8]));
+    struct xy_t *demo1 = (struct xy_t * )malloc(8*sizeof(struct xy_t));
+    int k =0;
     for (int num = 0; num < 8; num++)
     {
-        for (int i = 10; i < 19; i++)
-        {
-            demo1[num]->x = 3;
-            demo1[num]->y = i;
-        }
+            
+            demo1[num].x = 3;
+            demo1[num].y = 10+k;
+            k++;
     }
     return demo1;
 }
@@ -86,9 +85,9 @@ int main()
     tm_new.c_cc[VTIME] = 0;
     tcsetattr(0, TCSANOW, &tm_new);
     init_map();
-    struct xy_t * demo1[8] = demos();
+    struct xy_t * demo1 = demos();
     for (int i=0;i<8;i++){
-        printf("x=%d\ty=%d\n",demo1[i]->x,demo1[i]->y);
+        printf("x=%d\ty=%d\n",demo1[i].x,demo1[i].y);
     }
     int ch;
     signal(SIGALRM, h1);
