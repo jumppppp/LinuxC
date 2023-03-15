@@ -74,6 +74,7 @@ static void cat_map(void)
         printf("\n");
     }
 }
+void draw()
 int main()
 {
     init_load();
