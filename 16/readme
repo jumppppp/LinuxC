@@ -1,16 +1,47 @@
 SOKET  
 -------------------
 
-1 dgramsocket( bao shi)
+1 dgram socket( bao shi)
 
-1)acive(zhu dong)
-    second  run
-    to2.c
+    socket();
+    bind();
+    sendto();
+    rcvfrom();
+    inet_ntop();    
+    inet_pton():    // 127.0.0.1    ->  big num
+    htonl()
+    htons()
+    ntohl()
+    ntohs()
 
-2)passive(bei dong)
-    first run
-    to1.c
+    (1)acive(zhu dong)(client)
+        second  run     ->  to2.c
+        process(liu cheng):
+        main(){
+            soket();
+            sendto();
+            close();
+            exit();
+        }
+        
+    (2)passive(bei dong)(server)
+        first run       ->  to1.c
+        process(liu cheng):
+        main(){
+            soket();
+            bind();
+            rcvfrom();
+            close();
+            exit();
+        }
 
+    the proto.h is first generation
+    proto2.h is second generation
+        to1_p2.c
+        to2_p2.c
+    ----------------
+    tip:
+        when you define macros(hong bian liang),you need add ()
 
 2 stream socket
 
@@ -25,3 +56,7 @@ SOKET
 
 127
 128
+129
+130
+131
+
