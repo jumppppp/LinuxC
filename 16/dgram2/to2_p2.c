@@ -22,7 +22,7 @@ int main(int argc,char ** argv)
     raddr.sin_family = AF_INET;
     raddr.sin_port = htons(atoi(PORT));
     inet_pton(AF_INET, ("127.0.0.1"), &raddr.sin_addr);
-    so1 = socket(AF_INET, SOCK_DGRAM, 0);
+    so1 = socket(AF_INET, SOCK_DGRAM, SO_BROADCAST);
     struct msg_st * sbufp;
     size_t size = sizeof(struct msg_st)+strlen(argv[1]);
     sbufp = malloc(size);

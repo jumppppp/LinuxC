@@ -12,7 +12,7 @@ int main()
     struct msg_st *msg;
     socklen_t raddr_len;
     char ipstr[128];
-    so1 = socket(AF_INET, SOCK_DGRAM, 0);
+    so1 = socket(AF_INET, SOCK_DGRAM, SO_BROADCAST);
 
     laddr.sin_family = AF_INET;
     laddr.sin_port = htons(atoi(PORT));
