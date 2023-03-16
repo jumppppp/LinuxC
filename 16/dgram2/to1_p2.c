@@ -16,7 +16,7 @@ int main()
 
     laddr.sin_family = AF_INET;
     laddr.sin_port = htons(atoi(PORT));
-    inet_pton(AF_INET, "0.0.0.0", &laddr.sin_addr);
+    inet_pton(AF_INET, "255.255.255.255", &laddr.sin_addr);
     int bres = bind(so1, (void *)&laddr, sizeof(laddr));
     size_t size = sizeof(struct msg_st)+NAMESIZE-1;
     msg = malloc(size);
