@@ -13,7 +13,14 @@ SOKET
     htons()
     ntohl()
     ntohs()
+-----------------------
+    multipoint communication(duo dian tong xin)
+    1\guang bo(quan wang guang bo,zi wang guang bo)
 
+    
+    2\duo bo(zhu bo)
+
+    
     (1)acive(zhu dong)(client)
         second  run     ->  to2.c
         process(liu cheng):
