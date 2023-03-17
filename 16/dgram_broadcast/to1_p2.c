@@ -12,11 +12,12 @@ int main()
     struct msg_st *msg;
     socklen_t raddr_len;
     char ipstr[128];
-    so1 = socket(AF_INET, SOCK_DGRAM, SO_BROADCAST);
-
+    so1 = socket(AF_INET, SOCK_DGRAM, 0);
+    int val=1;
+    setsockopt(so1,SOL_SOCKET,SO_BROADCAST,&val,sizeof(val));
     laddr.sin_family = AF_INET;
     laddr.sin_port = htons(atoi(PORT));
-    inet_pton(AF_INET, "255.255.255.255", &laddr.sin_addr);
+    inet_pton(AF_INET, "0.0.0.0", &laddr.sin_addr);
     int bres = bind(so1, (void *)&laddr, sizeof(laddr));
     size_t size = sizeof(struct msg_st)+NAMESIZE-1;
     msg = malloc(size);

@@ -13,11 +13,13 @@ SOKET
     htons()
     ntohl()
     ntohs()
+    setsockopt
+    getsockopt
 -----------------------
     multipoint communication(duo dian tong xin)
     1\guang bo(quan wang guang bo,zi wang guang bo)
-
-
+        dgram_broadcast/
+            setsockopt();
     2\duo bo(zhu bo)
 
     
