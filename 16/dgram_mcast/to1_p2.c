@@ -5,6 +5,7 @@
 #include "proto2.h"
 #include <arpa/inet.h>
 #include<unistd.h>
+#include<net/if.h>
 int main()
 {
     int so1;
@@ -13,8 +14,11 @@ int main()
     socklen_t raddr_len;
     char ipstr[128];
     so1 = socket(AF_INET, SOCK_DGRAM, 0);
-    int val=1;
-    setsockopt(so1,SOL_SOCKET,SO_BROADCAST,&val,sizeof(val));
+    struct ip_mreqn val;
+        inet_pton(AF_INET, MGROUP, &val.imr_multiaddr);
+    inet_pton(AF_INET, "0.0.0.0", &val.imr_address);
+    val.imr_ifindex = if_nametoindex("eth0");
+    setsockopt(so1,IPPROTO_IP, IP_ADD_MEMBERSHIP, &val, sizeof(val));
     laddr.sin_family = AF_INET;
     laddr.sin_port = htons(atoi(PORT));
     inet_pton(AF_INET, "0.0.0.0", &laddr.sin_addr);
@@ -28,7 +32,7 @@ int main()
         recvfrom(so1, msg, size, 0, (void *)&raddr, &raddr_len);
         inet_ntop(AF_INET,&raddr.sin_addr,ipstr,128);
         printf("MESSAFE FROM %s:%d\n",ipstr,ntohs(raddr.sin_port));
-        if(ntohl(msg->math)>90){
+        if(ntohl(msg->math)>10){
  printf("NAME=%s\n",msg->name);
         printf("MATH=%d\n",ntohl(msg->math));
         printf("CHINESE=%d\n",ntohl(msg->chinese));

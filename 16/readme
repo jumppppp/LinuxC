@@ -17,10 +17,15 @@ SOKET
     getsockopt
 -----------------------
     multipoint communication(duo dian tong xin)
-    1\guang bo(quan wang guang bo,zi wang guang bo)
+    1\guang bo(quan wang guang bo,zi wang guang bo) broadcast
         dgram_broadcast/
             setsockopt();
-    2\duo bo(zhu bo)
+    2\duo bo(zhu bo) multicast
+        dgram_mcast/
+            man 7 socket and man 7 ip
+             if_nametoindex();
+             224.0.0.1 == 255.255.255.255
+
 
     
     (1)acive(zhu dong)(client)
