@@ -10,6 +10,10 @@
 #include <wait.h>
 #define PORT "2000"
 #define PORCNUM 10
+#define MIN_ARE 5;
+#define MAX_ARE 10;
+#define CLIENT 20;
+
 int main()
 {
 
