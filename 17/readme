@@ -1,16 +1,21 @@
 
 
 
+1 stream
 
+    server.c
+    client.c
+2 stream_http
 
-
-
-
-
-
-
-
+    mutil process server
+    server2.c   ->  test get data, that question
 
 
 134
 135
+136
+137
+138
+139
+140
+141

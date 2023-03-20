@@ -25,7 +25,8 @@
         "socket.h": "c",
         "inet.h": "c",
         "stdint.h": "c",
-        "typeinfo": "c"
+        "typeinfo": "c",
+        "in.h": "c"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
