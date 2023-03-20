@@ -36,6 +36,7 @@ int main(int argc, char **argv)
     struct msg_st *sbufp;
     size_t size = sizeof(struct msg_st) + strlen(argv[1])+5;
     sbufp = malloc(size);
+    memset(sbufp,'\0',size);
     char tmp[128];
     while (1)
     {

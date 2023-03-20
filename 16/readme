@@ -15,6 +15,7 @@ SOKET
     ntohs()
     setsockopt
     getsockopt
+    memset(sbufp,'\0',size);    ->   clear mamory 
 -----------------------
 
     multipoint communication(duo dian tong xin)
